@@ -2,11 +2,11 @@ package com.tianmao.entity;
 
 public class Product {
 
-    private String productId ;
-    private String productName ;
-    private float productPrice ;
-    private String productUnit ;
-    private int productQty ; //产品库存
+    private String productId;
+    private String productName;
+    private float productPrice;
+    private String productUnit;
+    private int productQty; //产品库存
 
     public Product(String productId, String productName, float productPrice, String productUnit, int productQty) {
         this.productId = productId;
@@ -60,6 +60,5 @@ public class Product {
         this.productQty = productQty;
     }
 
-   
-    
+
 }

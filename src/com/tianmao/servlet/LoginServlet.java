@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
         //2. 执行业务逻辑，完成请求处理
         UserDao dao = new UserDao();
         User user = dao.findUserByMark(mark, pass);
-        if (user != null) {
+        if (user != null && pass.equals(user.getPaassword())) {
             HttpSession session = req.getSession();
             session.setAttribute("isLogin", true);
             session.setAttribute("user", user);

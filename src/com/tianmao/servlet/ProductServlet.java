@@ -2,6 +2,7 @@ package com.tianmao.servlet;
 
 import com.tianmao.dao.ProductDao;
 import com.tianmao.entity.Product;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,12 +22,12 @@ public class ProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         //1. 获取请求参数
-        String pid=req.getParameter("pid");
-        
+        String pid = req.getParameter("pid");
+
         //2. 执行业务逻辑，完成请求处理
-        ProductDao dao=new ProductDao();
-        Product pro=dao.findProductById(pid); //根据产品编号查询单个产品的所有信息
-        
+        ProductDao dao = new ProductDao();
+        Product pro = dao.findProductById(pid); //根据产品编号查询单个产品的所有信息
+
         //3. 将查询到的信息共享给productInfo.jsp页面显示
         //如果希望将一些信息共享到下个servlet或jsp，而不是通过会话共享
         //则可以考虑将信息作为属性添加到请求对象，然后转发请求
